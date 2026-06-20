@@ -1,0 +1,177 @@
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+    color:white;
+}
+
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background:#0f172a;
+    border-bottom:1px solid #1e293b;
+}
+
+.logo {
+    font-weight:bold;
+    font-size:20px;
+    color:#14f1ff;
+}
+
+.links a {
+    margin-left:25px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.links a:hover {
+    color:#14f1ff;
+}
+
+.content {
+    min-height:100vh;
+}
+
+/* HOME SECTION */
+
+.section {
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.big-title {
+    font-size:80px;
+    font-weight:800;
+}
+
+.highlight {
+    color:#14f1ff;
+    text-shadow:0 0 20px #14f1ff;
+}
+
+.section p {
+    font-size:22px;
+    margin-top:20px;
+    color:#cbd5e1;
+}
+
+.launch-btn {
+    margin-top:40px;
+    padding:18px 45px;
+    background:#14f1ff;
+    color:black;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.launch-btn:hover {
+    transform:scale(1.08);
+    box-shadow:0 0 25px #14f1ff;
+}
+
+/* LIVE PAGE */
+
+.live-container {
+    padding:40px;
+    display:flex;
+    gap:40px;
+}
+
+.video-box img {
+    width:100%;
+    border-radius:15px;
+    border:2px solid #14f1ff;
+}
+
+.stats {
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.card {
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    font-size:20px;
+    text-align:center;
+}
+body {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.active {
+    color:#14f1ff;
+    border-bottom:2px solid #14f1ff;
+    padding-bottom:4px;
+}
+.progress {
+    width:100%;
+    height:12px;
+    background:#334155;
+    border-radius:6px;
+    margin-top:10px;
+}
+
+.progress-bar {
+    height:100%;
+    width:0%;
+    background:#14f1ff;
+    border-radius:6px;
+    transition:0.4s;
+}
+.mode-control {
+    margin-bottom: 20px;
+}
+
+.mode-control form {
+    margin-bottom: 10px;
+}
+
+.mode-control button {
+    background: #00f5ff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.progress{
+height:20px;
+background:#333;
+border-radius:10px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+background:#00e5ff;
+width:0%;
+text-align:center;
+color:white;
+font-size:12px;
+}
+.video-box{
+width:100%;
+max-width:800px;
+margin-top:20px;
+}
+
+.video-box img{
+width:100%;
+height:auto;
+display:block;
+border-radius:12px;
+}

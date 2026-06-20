@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mode-control">
+
+    <form action="/set_mode" method="post">
+        <button name="mode" value="webcam">Use Laptop Webcam</button>
+    </form>
+
+    <form action="/set_mode" method="post">
+        <input type="text" name="mobile_ip" placeholder="Enter Mobile IP (e.g 192.168.1.5:8080)">
+        <button name="mode" value="mobile">Use Mobile Camera</button>
+    </form>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="video">
+        <button type="submit">Upload Parking Video</button>
+    </form>
+
+</div>
+<div class="live-container">
+
+    <!-- VIDEO STREAM -->
+    <div class="video-box">
+        <img id="videoStream" src="/video_feed" style="width:100%; border-radius:10px;" />
+    </div>
+
+</div>
+</div>
+    <div class="card">
+    <h3>Total Slots</h3>
+    <h2 id="totalSlots">0</h2>
+</div>
+
+<div class="card">
+    <h3>Free Slots</h3>
+    <h2 id="freeSlots">0</h2>
+</div>
+
+<div class="card">
+    <h3>Occupied</h3>
+    <h2 id="occupiedSlots">0</h2>
+</div>
+        <div class="card">
+            Occupancy Rate
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function updateStats() {
+    fetch("/stats")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("totalSlots").innerText = data.total;
+        document.getElementById("freeSlots").innerText = data.free;
+        document.getElementById("occupiedSlots").innerText = data.occupied;
+    });
+}
+
+function refreshStream() {
+    const img = document.getElementById("videoStream");
+    if (img) {
+        img.src = "/video_feed?" + new Date().getTime();
+    }
+}
+
+setInterval(updateStats, 1000);
+setInterval(refreshStream, 3000);
+</script>
+{% endblock %}
